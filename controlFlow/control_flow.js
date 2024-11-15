@@ -42,3 +42,21 @@ console.log("User Category:", userCategory);
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not Authenticated";
 console.log("Authentication Status:", authenticationStatus);
+
+let member = "enrolled member";
+let dietaryServices;
+switch (member) {
+    case "employee":
+        dietaryServices = "You have acess to dietary services";
+        break;
+    case "enrolled member" :
+        dietaryServices = "You have access to dietary services and one on one interaction with a dietician";
+        break;
+    case "subscriber":
+        dietaryServices = "You have access to dietary services only!";
+        break;
+    case "non-subscriber":
+        dietaryServices = "Please enroll or subscribe first to avail this facility.";
+        break;
+}
+console.log("Hey!", dietaryServices);
