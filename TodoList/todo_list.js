@@ -31,7 +31,8 @@ function clearCompletedTasks() {
             displayTasks();
         }
 function clearAllTasks () {
-    const clearAll = document.getElementById("taskList").innerHTML = tasks.splice();
+    document.getElementById("taskList").innerHTML = tasks.splice(0);
+    displayTasks();
     window.alert("All tasks removed!");
 }
 addTaskBtn.addEventListener("click", addTask);
