@@ -2,6 +2,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const clearAllTasksBtn = document.getElementById("clearAllTasksBtn");
 let tasks = [];
 function addTask() {
             const taskText = taskInput.value.trim();
@@ -21,15 +22,20 @@ function displayTasks() {
                 taskList.appendChild(li);
             });
         }
-        function toggleTask(index) {
+function toggleTask(index) {
             tasks[index].completed = !tasks[index].completed;
             displayTasks();
         }
-    function clearCompletedTasks() {
+function clearCompletedTasks() {
             tasks = tasks.filter(task => !task.completed);
             displayTasks();
         }
+function clearAllTasks () {
+    const clearAll = document.getElementById("taskList").innerHTML = tasks.splice();
+    window.alert("All tasks removed!");
+}
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
  displayTasks();
- 
+clearAllTasksBtn.addEventListener("click", clearAllTasks);
+
